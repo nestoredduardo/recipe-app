@@ -18,11 +18,46 @@ class AuthorCard extends StatelessWidget {
   // 2
   @override
   Widget build(BuildContext context) {
-    // TODO: Replace return Container(...);
     return Container(
       padding: const EdgeInsets.all(16),
       child: Row(
-        children: [],
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          // 1
+          Row(
+            children: [
+              CircleImage(
+                imageProvider: imageProvider,
+                imageRadius: 28,
+              ),
+              // 2
+              const SizedBox(width: 8),
+              // 3
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    authorName,
+                    style: RecipeTheme.lightTextTheme.headline2,
+                  ),
+                  Text(
+                    title,
+                    style: RecipeTheme.lightTextTheme.headline3,
+                  )
+                ],
+              ),
+            ],
+          ),
+          IconButton(
+            onPressed: (){
+              const snackBar = SnackBar(content: Text('Favorite Pressed'));
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            },
+            icon: const Icon(Icons.favorite_border),
+            iconSize: 30,
+            color: Colors.grey[400],
+          )
+        ]
       ),
     );
   }
