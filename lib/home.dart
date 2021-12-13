@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:recipe/card2.dart';
 
 import 'card1.dart';
+import 'card2.dart';
 import 'card3.dart';
+import 'screens/grocery_screen.dart';
+
 
 // 1
 class Home extends StatefulWidget {
@@ -20,7 +22,7 @@ class _HomeState extends State<Home> {
   static List<Widget> pages = <Widget>[
     const Card1(),
     const Card2(),
-    const Card3(),
+    const GroceryScreen()
   ];
 
   // 9
@@ -54,15 +56,15 @@ class _HomeState extends State<Home> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.card_giftcard),
-            label: 'Card',
+            label: 'Explore',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.card_giftcard),
-            label: 'Card2',
+            label: 'Recipes',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.card_giftcard),
-            label: 'Card3',
+            label: 'To Buy',
           ),
         ],
       ),
